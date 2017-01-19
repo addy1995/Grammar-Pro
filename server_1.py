@@ -5,8 +5,8 @@ import json
 app = Flask(__name__)
 
 
-textGearsKey = ''
-wordsApiMashapeKey = ''
+textGearsKey = '' #Add TextGear Key here
+wordsApiMashapeKey = '' #Add WordApiMashape Key here
 
 
 @app.route('/grammarly', methods={'GET', 'POST'})
@@ -173,4 +173,4 @@ def get_ant(word):
     return new
 
 if __name__ == '__main__':
-    app.run(host='10.10.105.33')
+    app.run()
