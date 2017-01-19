@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style type="text/css">
+
+    body{
+        background: silver;
+    }
+
+
+    .main{
+        margin: 10% 20% 10% 25%;
+        background: white;
+        width: 50%;
+        display: block;
+        border: 3px solid black;
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+    .result{
+        margin-left: 5%;
+    }
+
+    .this{
+    text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="main">
+    <h1 class="this">
+    Check Text Here
+</h1>
+
+<form method="POST" class="this">
+    {% if ans.__len__()==0 %}
+
+    <textarea rows=4 cols=35 name="text_input" >
+</textarea>
+    {% else %}
+
+
+    <textarea rows=4 cols=35 name="text_input" >{{text}}
+</textarea>
+    {% endif %}
+    <br>
+    <input type="submit" name="submit" value="Check">
+</form>
+
+<p class="result">
+    {% if ans.__len__()==0 %}
+    No Mistakes
+    {% else %}
+
+    Mistakes are
+    {% endif %}
+    </p>
+
+    <ul class="result">
+    {% for item in ans%}
+    <li>
+        {{item[0]}}
+        <br>
+        {% for val in item[1:-1] %}
+            {{ val }},
+            {% endfor %}
+        {{item[-1]}}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <a href="home" >Home Page</a>
+
+</div>
+</body>
+</html>

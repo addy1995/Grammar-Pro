@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style type="text/css">
+
+    body{
+        background: silver;
+    }
+
+
+    div{
+        margin: 10% 20% 10% 25%;
+        background: white;
+        width: 50%;
+        display: block;
+        border: 3px solid black;
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+    .result{
+        margin: 5%;
+    }
+
+
+    .this{
+    text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div>
+    <h1 class="this">
+    Enter your word here
+</h1>
+
+<form method="POST" class="this">
+
+    <input type="text" name="text_input">
+    <br>
+    <br>
+    <input type="submit" name="submit" value="Find">
+    <select name="type">
+        <option>Word</option>
+        <option>Definition</option>
+        <option>Synonyms</option>
+        <option>Antonyms</option>
+    </select>
+
+</form>
+    <p class="result">
+
+    {% if word==None %}
+        <strong>{{ans}}</strong>
+    {% elif ans !=None %}
+    <strong>{{word}}</strong>
+    {% if type=='Word' %}
+        <ul class="result">
+        <li>
+
+        <strong>Pronunciation:</strong>
+            <br>
+        {%if ans[0]!= None %}
+            {%for a in ans[0].keys()%}
+                For {{a}}: {{ ans[0][a] }}
+                <br>
+            {% endfor %}
+        {% else %}
+            Not Available
+        {% endif %}
+        </li>
+        <br>
+
+        {%for a in range(ans[1].__len__())%}
+        <li>
+            {%for dat in ans[1][a].keys()%}
+            <strong>{{dat}}:</strong>
+                {% if dat=='definition' or dat=='partOfSpeech' %}
+                    {{ans[1][a][dat]}}.
+                {%else%}
+                    {%for c in ans[1][a][dat][1:-1]%}
+                        {{c}},
+                        {%endfor%}
+                    {{ans[1][a][dat][-1]}}.
+                    {%endif%}
+                <br>
+            {%endfor%}
+        </li>
+        <br>
+        {%endfor%}
+        </ul>
+    {%elif type=='Definition'%}
+        <ul class="result">
+        {%for a in range(ans[0].__len__())%}
+        <li>
+            {%for dat in ans[0][a].keys()%}
+            <strong>{{dat}}:</strong>
+                    {{ans[0][a][dat]}}.
+                <br>
+            {%endfor%}
+        </li>
+        <br>
+        {%endfor%}
+        </ul>
+    {%elif type=='Synonyms'%}
+
+        <ul class="result">
+            <li>
+                <strong>Synonyms:</strong>
+                <br>
+        {%for a in ans[0][:-1]%}
+            {{a}},
+        {%endfor%}
+                {{ans[0][-1]}}.
+            </li>
+        </ul>
+    {%elif type=='Antonyms'%}
+        <ul class="result">
+            <li>
+                <strong>Antonyms:</strong>
+                <br>
+        {%for a in ans[0][:-1]%}
+            {{a}},
+        {%endfor%}
+                {{ans[0][-1]}}.
+            </li>
+        </ul>
+    {%endif%}
+    {%endif%}
+    </p>
+    <a href="home" >Home Page</a>
+
+</div>
+</body>
+</html>
