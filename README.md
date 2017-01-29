@@ -4,7 +4,6 @@ A Python-based web app which finds the mistakes in a given sentence and also pro
 
 You must register and get WordsAPI key and TeaxtGear Api key and put it's value in the variables textGearsKey and wordsApiMashapeKey in the start of the server_1.py file.
 
-<a href = "https://tweet-count.herokuapp.com/">APP LINK</a>
 <h2>How to Use</h2>
 
 <h3>Setting up Modules and Keys</h3>
