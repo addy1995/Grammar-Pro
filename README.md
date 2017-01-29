@@ -20,6 +20,6 @@ You must register and get WordsAPI key and TeaxtGear Api key and put it's value 
 <li>The application is displayed.</li>
 </ul>
 
-<br><img src="https://raw.githubusercontent.com/addy1995/Grammar-Pro/tree/master/Screenshots/Grammar-pro_1.png"><br>
-<br><img src="https://raw.githubusercontent.com/addy1995/Grammar-Pro/tree/master/Screenshots/Grammar-pro_1.png"><br>
-<br><img src="https://raw.githubusercontent.com/addy1995/Grammar-Pro/tree/master/Screenshots/Grammar-pro_1.png"><br>
+<br><img src="https://raw.githubusercontent.com/addy1995/Grammar-Pro/master/Screenshots/Grammar-pro_1.PNG"><br>
+<br><img src="https://raw.githubusercontent.com/addy1995/Grammar-Pro/master/Screenshots/Grammar-pro_2.PNG"><br>
+<br><img src="https://raw.githubusercontent.com/addy1995/Grammar-Pro/master/Screenshots/Grammar-pro_3.PNG"><br>
